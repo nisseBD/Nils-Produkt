@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kort</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="menu-2">
+        <a href="om-oss.html">Om oss</a>
+        <a class="aktiv" href="index.html">Home</a>
+        <a href="kontakt.html">Kontakt</a>
+        <div id="vagn">
+            <img src="Bilder/Vagn.png" alt="" height="50px" width="50px">
+          <div id="result">
+          </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="container-2"> <!--Lägger in alla bilder i en container-->
+            <div class="image">
+              <img src="/Bilder/1.png" class="image">
+              <div class="buy">
+                <p id="cart"><button onclick="clickCounter()" type="button">Add to Cart</button></p> <!--när man trycker på en knapp så går functionen igång-->
+                <a id="info" href="https://shop.52kards.com/products/virtuoso" target="_blank"><button type="button">info</button></a>
+              </div>
+            </div>
+            <div class="image">
+              <img src="Bilder/2.png" class="image">
+              <div class="buy">
+                <p id="cart"><button onclick="clickCounter()" type="button">Add to Cart</button></p>
+                <a id="info" href="https://shop.52kards.com/products/memento-mori" target="_blank"><button type="button">info</button></a>
+              </div>
+            </div>
+            <div class="image">
+              <img src="Bilder/3.png" class="image">
+              <div class="buy">
+                <p id="cart"><button onclick="clickCounter()" type="button">Add to Cart</button></p>
+                <a id="info" href="https://shop.52kards.com/products/lucky-playing-cards" target="_blank"><button type="button">info</button></a>
+              </div>
+            </div>
+            <div class="image">
+              <img src="Bilder/4.png" class="image">
+              <div class="buy">
+                <p id="cart"><button onclick="clickCounter()" type="button">Add to Cart</button></p>
+                <a id="info" href="https://shop.52kards.com/products/666-playing-cards-by-riffle-shuffle?variant=31846701727817" target="_blank"><button type="button">info</button></a>
+              </div>
+            </div>
+            <div class="image">
+                <img src="Bilder/5.png" class="image">
+                <div class="buy">
+                  <p id="cart"><button onclick="clickCounter()" type="button">Add to Cart</button></p>
+                  <a id="info" href="https://shop.52kards.com/products/cherry-casino-tropicana-teal-playing-cards-by-pure-imagination-projects" target="_blank"><button type="button">info</button></a>
+                </div>
+              </div>
+              <div class="image">
+                <img src="Bilder/6.png" class="image">
+                <div class="buy">
+                  <p id="cart"><button onclick="clickCounter()" type="button">Add to Cart</button></p>
+                  <a id="info" href="https://shop.52kards.com/products/hops-barley-playing-cards-by-jocu-playing-cards?variant=31845819121737" target="_blank"><button type="button">info</button></a>
+                </div>
+              </div>
+              <div class="image">
+                <img src="Bilder/7.png" class="image">
+                <div class="buy">
+                  <p id="cart"><button onclick="clickCounter()" type="button">Add to Cart</button></p>
+                  <a id="info" href="https://shop.52kards.com/products/arcadia-signature-edition-playing-cards-by-arcadia-playing-cards?variant=31845849137225" target="_blank"><button type="button">info</button></a>
+                </div>
+              </div>
+              <div class="image">
+                <img src="Bilder/8.png" class="image">
+                <div class="buy">
+                  <p id="cart"><button onclick="clickCounter()" type="button">Add to Cart</button></p>
+                  <a id="info" href="https://shop.52kards.com/products/lonely-wolf-pink-playing-cards-by-bocopo" target="_blank"><button type="button">info</button></a>
+                </div>
+              </div>
+          </div>
+    </div>
+    <script> /*Detta script gör så att det läggs till 1 per gång du klickar på add to cart*/
+      function clickCounter() { /*namnet på funktionen*/
+        if (typeof(Storage) !== "undefined") { 
+          if (localStorage.clickcount) {
+            localStorage.clickcount = Number(localStorage.clickcount)+1; /*gör ett slags storage som sparar hur många produkter du klickar på och adderar med 1 per gång du klickar*/
+          } 
+          else {
+            localStorage.clickcount = 1 ;
+          }
+            document.getElementById("result").innerHTML = localStorage.clickcount;  
+          } else {
+            document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+        }
+      }
+    </script>
+    <hr id="hr2"></hr>
+    <footer>
+      <h1>Terms of service</h1>
+    </footer>
+</body>
+</html>
